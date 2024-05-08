@@ -2,12 +2,15 @@ package com.mertg.movieapp.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName
+import com.mertg.movieapp.domain.model.Movie
+
 
 data class MoviesDto(
-    @SerializedName("Response")
-    val response: String,
-    @SerializedName("Search")
-    val search: List<Search>,
-    @SerializedName("totalResults")
+    val Response: String,
+    val Search: List<Search>,
     val totalResults: String
 )
+
+fun MoviesDto.toMovieList() :List<Movie> {
+    return Search.map { search -> Movie(search.Poster,search.Title,search.Year,search.imdbID) }
+}
