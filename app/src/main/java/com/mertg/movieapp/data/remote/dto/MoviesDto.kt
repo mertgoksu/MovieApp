@@ -1,7 +1,6 @@
 package com.mertg.movieapp.data.remote.dto
 
 
-import com.google.gson.annotations.SerializedName
 import com.mertg.movieapp.domain.model.Movie
 
 

@@ -19,7 +19,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMovieApi() : MovieAPI{
+    fun provideMovieApi() : MovieAPI {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -29,8 +29,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMovieRepository(api : MovieAPI) : MovieRepository{
-        return MovieRepositoryImpl(api)
+    fun provideMovieRepository(api : MovieAPI) : MovieRepository {
+        return MovieRepositoryImpl(api = api)
     }
-
 }

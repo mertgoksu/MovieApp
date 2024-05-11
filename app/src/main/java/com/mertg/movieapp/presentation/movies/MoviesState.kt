@@ -7,4 +7,4 @@ data class MoviesState(
     val movies : List<Movie> = emptyList(),
     val error : String = "",
     val search : String = "batman"
-    )
+)
